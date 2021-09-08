@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Executed remotely after artifact is uploaded
+
+DEPLOY_PATH=$1
+ARTIFACT_FILE=$2
+
+cd ${DEPLOY_PATH}
+tar -xf ${ARTIFACT_FILE}
+rm ${ARTIFACT_FILE}
+
+chmod 644 .htpasswd
+chmod 644 .htaccess
