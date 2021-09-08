@@ -15,9 +15,9 @@ mkdir -p build
 mkdir -p .deploy
 
 # Custom commands
+yarn build prod
 envsubst < .htaccess >> ./build/.htaccess
 cp .htpasswd ./build
-cp index.html ./build
 
 # Create artifact
 tar -czf .deploy/"${ARTIFACT_FILE}" -C build .
